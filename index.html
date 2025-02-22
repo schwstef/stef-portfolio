@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe • AI Product Designer</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <style>
+        :root {
+            --primary: #0C0C0C;
+            --secondary: #F5F5F5;
+            --accent: #2D2D2D;
+            --text: #1C1E21;
+            --muted: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            mix-blend-mode: difference;
+        }
+
+        .nav-logo {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            width: 100%;
+            padding: 8rem 0;
+        }
+
+        .hero-title {
+            font-size: 5vw;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-text {
+            font-size: 1.25rem;
+            max-width: 600px;
+            color: #999;
+            margin-bottom: 3rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: #666;
+            animation: scrollLine 2s infinite;
+        }
+
+        .section {
+            padding: 8rem 0;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .work-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            background: var(--accent);
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .work-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .work-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .work-item:hover .work-overlay {
+            opacity: 1;
+        }
+
+        .tools {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding: 4rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        @keyframes scrollLine {
+            0% { transform: scaleY(0); transform-origin: top; }
+            50% { transform: scaleY(1); transform-origin: top; }
+            50.1% { transform: scaleY(1); transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#" class="nav-logo">JOHN DOE</a>
+        <div class="nav-menu">
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">Designing AI<br>Experiences at Meta</h1>
+                <p class="hero-text">
+                    Product Designer specializing in AI-powered interfaces. 
+                    Creating meaningful connections between human intelligence and artificial intelligence.
+                </p>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <section class="section" id="work">
+        <div class="container">
+            <div class="work-grid">
+                <div class="work-item" data-aos="fade-up">
+                    <img src="https://source.unsplash.com/random/800x600?ai" alt="Project 1">
+                    <div class="work-overlay">
+                        <h3>AI Interface Design</h3>
+                        <p>Meta • 2023</p>
+                    </div>
+                </div>
+                <div class="work-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://source.unsplash.com/random/800x600?technology" alt="Project 2">
+                    <div class="work-overlay">
+                        <h3>Machine Learning UI</h3>
+                        <p>Meta • 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="tools">
+        <span>Midjourney</span>
+        <span>•</span>
+        <span>DALL·E</span>
+        <span>•</span>
+        <span>GPT-4</span>
+        <span>•</span>
+        <span>Claude</span>
+        <span>•</span>
+        <span>Stable Diffusion</span>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html> 
